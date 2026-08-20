@@ -6,7 +6,7 @@ import { CheckoutStepOnePage } from '../pages/checkoutStepOne.page.js';
 import { CheckoutStepTwoPage } from '../pages/checkoutStepTwo.page.js';
 import { CheckoutCompletePage } from '../pages/checkoutComplete.page.js';
 
-test('E2E сценарий покупки самого дорогого товара', async ({ page }) => {
+test('E2E сценарий покупки самого дорогого товара @ui', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const inventoryPage = new InventoryPage(page);
     const cartPage = new CartPage(page);

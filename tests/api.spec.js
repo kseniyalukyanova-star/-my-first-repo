@@ -19,7 +19,7 @@ test.describe('Мои первые API тесты', () => {
         console.log('Токен получен:', authToken);
     })
 
-    test('Получить все бронирования', async ({ request }) => {
+    test('Получить все бронирования @api', async ({ request }) => {
        const bookingData = { 
         firstname: 'Ksenia', 
         lastname: 'Lukyanova', 
@@ -42,14 +42,14 @@ test.describe('Мои первые API тесты', () => {
         expect(responseBody.booking.firstname).toBe(bookingData.firstname);
     });
 
-    test('Получение информации о бронировании', async ({ request }) => {
+    test('Получение информации о бронировании @api', async ({ request }) => {
         const response = await request.get(`${baseURL}/booking/${bookingId}`);
         expect(response.status()).toBe(200);
         const responseBody = await response.json();
         expect(responseBody.firstname).toBe('Ksenia');
     });
 
-    test('Обновление бронирования', async ({ request }) => {
+    test('Обновление бронирования @api', async ({ request }) => {
     const updateData = { 
         firstname: 'Maria', 
         lastname: 'Lukyanova', 
@@ -71,7 +71,7 @@ test.describe('Мои первые API тесты', () => {
      expect(responseBody.firstname).toBe('Maria');
     });
 
-    test('Удаление бронирования', async ({ request }) => {
+    test('Удаление бронирования @api', async ({ request }) => {
         const deleteResponse = await request.delete(`${baseURL}/booking/${bookingId}`,{
             headers: {Cookie: `token=${authToken}`}
         });
